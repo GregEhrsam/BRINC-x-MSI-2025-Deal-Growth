@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRINC Deal Registry: Executive Growth Story</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8; 
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .kpi-card {
+            background-color: #FFFFFF;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            border-left: 5px solid #0077B6; 
+        }
+        .kpi-title {
+            color: #6B7280; 
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+        .kpi-value {
+            color: #003B5C;
+            font-weight: 800;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+        .section-card {
+             background-color: #FFFFFF;
+             border-radius: 0.75rem;
+             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+             padding: 2rem;
+             margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body class="text-[#003B5C]">
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#003B5C] mb-2">Opportunity Pipeline: A Story of Growth</h1>
+            <p class="text-xl text-[#0077B6] font-light">An Executive Summary of Deal Registry Performance as of October 2025</p>
+        </header>
+
+        <section class="section-card">
+            <h2 class="text-3xl font-bold text-center mb-8">Total Project Summary</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="kpi-card">
+                    <p class="kpi-title">Total Pipeline Value</p>
+                    <p class="kpi-value">$22.45M</p>
+                </div>
+                <div class="kpi-card">
+                    <p class="kpi-title">Total Opportunities</p>
+                    <p class="kpi-value">119</p>
+                </div>
+                <div class="kpi-card lg:col-span-1 md:col-span-2">
+                    <p class="kpi-title">Average Deal Size</p>
+                    <p class="kpi-value">$188.7K</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold">Gathering Momentum: Monthly Growth</h2>
+                <p class="max-w-3xl mx-auto text-lg mt-2 text-[#4A5568]">Our journey began with a strong start in April, establishing a solid foundation. While activity was steady through the summer, we experienced a significant and promising acceleration in new opportunities during August and September, indicating a strong market reception and effective sales execution.</p>
+            </div>
+             <div class="w-full max-w-4xl mx-auto">
+                <div class="chart-container h-96 md:h-[500px]">
+                    <canvas id="monthlyGrowthChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-card bg-[#003B5C] text-white">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold">Spotlight: Drone as First Responder (DFR)</h2>
+                <p class="max-w-3xl mx-auto text-lg mt-2 text-[#CAF0F8]">The DFR program is the cornerstone of our strategic focus, representing the largest and most valuable segment of our pipeline. This program's traction is a powerful testament to its market fit and its potential to revolutionize public safety operations.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                         <div class="bg-[#0077B6] p-6 rounded-lg shadow-lg text-center">
+                            <p class="text-xl font-semibold text-[#CAF0F8]">DFR Pipeline Value</p>
+                            <p class="text-4xl font-extrabold mt-1">$13.15M</p>
+                         </div>
+                         <div class="bg-[#0077B6] p-6 rounded-lg shadow-lg text-center">
+                            <p class="text-xl font-semibold text-[#CAF0F8]">DFR Opportunities</p>
+                            <p class="text-4xl font-extrabold mt-1">29</p>
+                         </div>
+                     </div>
+                     <div class="mt-6 bg-[#005A8D] p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-center">DFR Value Contribution</h3>
+                        <p class="text-center text-lg text-[#ADE8F4]">DFR opportunities constitute the majority of our total pipeline value, underscoring its critical importance to our overall success. Capturing this segment is key to achieving our growth targets.</p>
+                     </div>
+                </div>
+                <div class="chart-container h-80 md:h-96">
+                    <canvas id="dfrContributionChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+             <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold">Product Interest Overview</h2>
+                <p class="max-w-3xl mx-auto text-lg mt-2 text-[#4A5568]">While DFR is our lead initiative, we see healthy interest across our product ecosystem. 'Responder Patrol' and 'Lemur 2' also show significant engagement, highlighting opportunities for cross-selling and diversified growth. Unspecified interest represents a key area to nurture and convert.</p>
+            </div>
+            <div class="w-full max-w-4xl mx-auto">
+                <div class="chart-container h-96 md:h-[500px]">
+                    <canvas id="productInterestChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold">Future Outlook: Projected Growth to 2026</h2>
+                <p class="max-w-3xl mx-auto text-lg mt-2 text-[#4A5568]">Based on the powerful momentum from Q3 2025, we project substantial growth heading into 2026. Assuming a conservative continuation of the growth rate observed in August and September, we anticipate the pipeline value to increase significantly, positioning us for a landmark year.</p>
+            </div>
+            <div class="w-full max-w-4xl mx-auto">
+                <div class="chart-container h-96 md:h-[500px]">
+                    <canvas id="projectionChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="text-center mt-12 py-4">
+            <p class="text-gray-500">Confidential: For Internal Executive Review Only. | BRINC Inc. | October 1, 2025</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const brilliantBluesPalette = {
+            darkBlue: '#003B5C',
+            mediumBlue: '#0077B6',
+            lightBlue: '#00B4D8',
+            paleBlue: '#90E0EF',
+            veryPaleBlue: '#CAF0F8',
+            accent: '#F4A261'
+        };
+
+        function processLabel(label) {
+            if (typeof label !== 'string' || label.length <= 16) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > 16) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+        
+        const currencyFormatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        });
+
+        const monthlyGrowthCtx = document.getElementById('monthlyGrowthChart').getContext('2d');
+        new Chart(monthlyGrowthCtx, {
+            type: 'line',
+            data: {
+                labels: ['April', 'May', 'June', 'July', 'August', 'September'],
+                datasets: [{
+                    label: 'New Opportunity Value',
+                    data: [2700000, 100000, 500000, 750000, 7500000, 10900000],
+                    backgroundColor: 'rgba(0, 180, 216, 0.2)',
+                    borderColor: brilliantBluesPalette.mediumBlue,
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: brilliantBluesPalette.darkBlue,
+                    pointRadius: 5,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value, index, values) {
+                                return currencyFormatter.format(value);
+                            },
+                             font: {
+                                weight: '600'
+                            },
+                            color: brilliantBluesPalette.darkBlue
+                        },
+                        grid: {
+                            color: '#E0E0E0'
+                        }
+                    },
+                    x: {
+                         ticks: {
+                            font: {
+                                weight: '600'
+                            },
+                             color: brilliantBluesPalette.darkBlue
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += currencyFormatter.format(context.parsed.y);
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const dfrContributionCtx = document.getElementById('dfrContributionChart').getContext('2d');
+        new Chart(dfrContributionCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['DFR Pipeline', 'Other Pipeline'],
+                datasets: [{
+                    label: 'Pipeline Value',
+                    data: [13150000, 9300000],
+                    backgroundColor: [brilliantBluesPalette.lightBlue, '#E0E0E0'],
+                    borderColor: [brilliantBluesPalette.mediumBlue, '#BDBDBD'],
+                    borderWidth: 2,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                     legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: 'white',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                let value = context.parsed;
+                                let total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                let percentage = ((value / total) * 100).toFixed(1);
+                                return `${label} ${currencyFormatter.format(value)} (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const productInterestCtx = document.getElementById('productInterestChart').getContext('2d');
+        new Chart(productInterestCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    processLabel('Drone as First Responder (DFR)'), 
+                    'Unspecified', 
+                    processLabel('Responder Patrol'), 
+                    'Lemur 2', 
+                    processLabel('DFR & Responder Patrol'),
+                    processLabel('DFR, Responder Patrol, Lemur 2')
+                ],
+                datasets: [{
+                    label: 'Opportunity Value',
+                    data: [12650000, 6800000, 1800000, 600000, 100000, 500000],
+                    backgroundColor: [
+                        brilliantBluesPalette.darkBlue,
+                        brilliantBluesPalette.mediumBlue,
+                        brilliantBluesPalette.lightBlue,
+                        brilliantBluesPalette.paleBlue,
+                        brilliantBluesPalette.veryPaleBlue,
+                        brilliantBluesPalette.accent
+                    ],
+                    borderColor: brilliantBluesPalette.darkBlue,
+                    borderWidth: 1,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return currencyFormatter.format(value);
+                            },
+                             font: {
+                                weight: '600'
+                            },
+                            color: brilliantBluesPalette.darkBlue
+                        },
+                         grid: {
+                            color: '#E0E0E0'
+                        }
+                    },
+                    y: {
+                         ticks: {
+                            font: {
+                                weight: '600'
+                            },
+                            color: brilliantBluesPalette.darkBlue
+                        },
+                         grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                             label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.x !== null) {
+                                    label += currencyFormatter.format(context.parsed.x);
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const projectionCtx = document.getElementById('projectionChart').getContext('2d');
+        const totalPipelineToDate = 22450000;
+        const q4Projection = totalPipelineToDate + ( (7500000 + 10900000) / 2 * 3);
+        const q1_2026_Projection = q4Projection * 1.5; 
+        const q2_2026_Projection = q1_2026_Projection * 1.4;
+
+        new Chart(projectionCtx, {
+            type: 'bar',
+            data: {
+                labels: ['End of Q3 2025 (Actual)', 'End of Q4 2025 (Projected)', 'End of Q1 2026 (Projected)', 'End of Q2 2026 (Projected)'],
+                datasets: [{
+                    label: 'Projected Pipeline Value',
+                    data: [totalPipelineToDate, q4Projection, q1_2026_Projection, q2_2026_Projection],
+                    backgroundColor: [
+                        brilliantBluesPalette.paleBlue,
+                        brilliantBluesPalette.lightBlue,
+                        brilliantBluesPalette.mediumBlue,
+                        brilliantBluesPalette.darkBlue
+                    ],
+                    borderColor: brilliantBluesPalette.darkBlue,
+                    borderWidth: 1,
+                    borderRadius: 5,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return currencyFormatter.format(value);
+                            },
+                            font: {
+                                weight: '600'
+                            },
+                            color: brilliantBluesPalette.darkBlue
+                        },
+                         grid: {
+                            color: '#E0E0E0'
+                        }
+                    },
+                     x: {
+                         ticks: {
+                            font: {
+                                weight: '600'
+                            },
+                             color: brilliantBluesPalette.darkBlue
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += currencyFormatter.format(context.parsed.y);
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
